@@ -104,13 +104,13 @@
                       Grid.Column="0">
                     <Rectangle Height="120" Margin="20" Fill="White" RadiusY="10" RadiusX="10" >
                         <Rectangle.Effect>
-                            <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
+                                <DropShadowEffect BlurRadius="10" Color="#ff5722" RenderingBias="Quality" ShadowDepth="1"/>
                         </Rectangle.Effect>
                     </Rectangle>
                     <Grid Margin="25" Height="120">
                             <Grid Width="35" Height="50" Background="#ff6f00" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20 0">
                             <Grid.Effect>
-                                <DropShadowEffect BlurRadius="20" Color="#FFECECEC" RenderingBias="Quality" ShadowDepth="1"/>
+                                <DropShadowEffect BlurRadius="10" Color="#FFECECEC" RenderingBias="Quality" ShadowDepth="1"/>
                             </Grid.Effect>
                                 <materialUIDesign:PackIcon Kind="BacteriaOutline" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" Foreground="White" Width="20" Height="20"/>
                             </Grid>
@@ -154,13 +154,13 @@
                           Grid.Column="1">
                     <Rectangle Height="120" Margin="20" Fill="White" RadiusY="10" RadiusX="10" >
                         <Rectangle.Effect>
-                            <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
+                                <DropShadowEffect BlurRadius="20" Color="#76ff03" RenderingBias="Quality" ShadowDepth="1"/>
                         </Rectangle.Effect>
                     </Rectangle>
                     <Grid Margin="25" Height="120">
                         <Grid Width="35" Height="50" Background="#FF41A43C" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20 0">
                             <Grid.Effect>
-                                <DropShadowEffect BlurRadius="20" Color="#FFECECEC" RenderingBias="Quality" ShadowDepth="1"/>
+                                <DropShadowEffect BlurRadius="10" Color="#FFECECEC" RenderingBias="Quality" ShadowDepth="1"/>
                             </Grid.Effect>
                                 <materialUIDesign:PackIcon Kind="HealthPotion" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" Foreground="White" Width="20" Height="20"/>
                         </Grid>
@@ -202,13 +202,13 @@
                           Grid.Column="2">
                     <Rectangle Height="120" Margin="20" Fill="White" RadiusY="10" RadiusX="10" >
                         <Rectangle.Effect>
-                            <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
+                                <DropShadowEffect BlurRadius="20" Color="#ff1744" RenderingBias="Quality" ShadowDepth="1"/>
                         </Rectangle.Effect>
                     </Rectangle>
                     <Grid Margin="25" Height="120">
                         <Grid Width="35" Height="50" Background="#FFCF1F1F" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20 0">
                             <Grid.Effect>
-                                <DropShadowEffect BlurRadius="20" Color="#FFECECEC" RenderingBias="Quality" ShadowDepth="1"/>
+                                <DropShadowEffect BlurRadius="10" Color="#FFECECEC" RenderingBias="Quality" ShadowDepth="1"/>
                             </Grid.Effect>
                                 <materialUIDesign:PackIcon Kind="Cross" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" Foreground="White" Width="20" Height="20"/>
                         </Grid>
@@ -239,18 +239,62 @@
                             </StackPanel>
                     </Grid>
                 </Grid>
-                <Grid x:Name="GridlabelDate"  
+                <Grid x:Name="GridlabelCountries"  
                         Grid.RowSpan="2"
-                        Grid.ColumnSpan="3"
-                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
                         Grid.Row="1">
-                        <Rectangle Height="40" Margin="20" Fill="White" RadiusY="10" RadiusX="10" >
+                        <Rectangle Height="50" Margin="20" Fill="White" RadiusY="10" RadiusX="10" >
                             <Rectangle.Effect>
-                                <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
+                                <DropShadowEffect BlurRadius="20" Color="#455a64" RenderingBias="Quality" ShadowDepth="1"/>
+                            </Rectangle.Effect>
+                        </Rectangle>
+                        <Grid Margin="25" Height="50">
+                            <Grid 
+                                Width="25" 
+                                Height="30" 
+                                Background="#455a64" 
+                                HorizontalAlignment="Left" 
+                                VerticalAlignment="Top" Margin="10 0 0 0">
+                                <Grid.Effect>
+                                    <DropShadowEffect BlurRadius="20" Color="#455a64" RenderingBias="Quality" ShadowDepth="1"/>
+                                </Grid.Effect>
+                                <materialUIDesign:PackIcon
+                                    Kind="Map" 
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Bottom"
+                                    Margin="5" 
+                                    Foreground="White" 
+                                    Width="20" 
+                                    Height="20"/>
+                            </Grid>
+                            <ComboBox x:Name="ComboBoxCountries"
+                                ItemsSource="{Binding AffectedCountries.countries}"
+                                      Style="{StaticResource MaterialDesignFloatingHintComboBox}"
+                                      SelectedItem="{Binding SelectedCountry}" 
+                                      Margin="0 0 0 5"
+                                      DisplayMemberPath="name"
+                                      SelectedValuePath="iso2"
+                                      Width="300"
+                                      VerticalAlignment="Center"
+                                      materialUIDesign:HintAssist.Hint="Select a Country"/>
+                        </Grid>
+                </Grid>
+                    <Grid x:Name="GridlabelDate"  
+                        Grid.RowSpan="2"
+                        Grid.Column="2"
+                        Grid.Row="1">
+                        <Rectangle Height="50" Margin="20" Fill="White" RadiusY="10" RadiusX="10" >
+                            <Rectangle.Effect>
+                                <DropShadowEffect BlurRadius="20" Color="#bf360c" RenderingBias="Quality" ShadowDepth="1"/>
                             </Rectangle.Effect>
                         </Rectangle>
                         <Grid Margin="25" Height="40">
-                            <Grid Width="25" Height="30" Background="#311b92" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20 0">
+                            <Grid 
+                                Width="25" 
+                                Height="30" 
+                                Background="#311b92" 
+                                HorizontalAlignment="Left" 
+                                VerticalAlignment="Top" Margin="10 -5 0 0">
                                 <Grid.Effect>
                                     <DropShadowEffect BlurRadius="20" Color="#FFECECEC" RenderingBias="Quality" ShadowDepth="1"/>
                                 </Grid.Effect>
@@ -263,21 +307,14 @@
                                     Width="20" 
                                     Height="20"/>
                             </Grid>
-                            <TextBlock x:Name="TextBlockDATE"
-                                       Style="{StaticResource TitleTextBlockStyle}"
-                                       Foreground="#311b92"
-                                       FontSize="20"
-                                       HorizontalAlignment="Left"
-                                       Margin="50 5 0 0"
-                                       Text="LAST UPDATED DATE" />
-                                <TextBlock 
-                                    Text="{Binding CovidDetails.lastUpdate}"
-                                    FontFamily="Champagne &amp; Limousines" 
-                                    VerticalAlignment="Center" 
-                                    Foreground="Gray" 
-                                    FontSize="20"
-                                    Margin="300 5 0 0"/>
-                         </Grid>
+                            <TextBlock     
+                                    Text="{Binding CovidDetails.lastUpdate}"    
+                                    VerticalAlignment="Center"     
+                                    Foreground="Gray"     
+                                    FontSize="15"     
+                                Margin="40 0 10 0" 
+                                HorizontalAlignment="Center"/>
+                        </Grid>
                     </Grid>
                 <Grid x:Name="GridLabelRatios"
                     Grid.Row="3"

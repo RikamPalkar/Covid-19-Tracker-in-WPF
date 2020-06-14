@@ -8,13 +8,13 @@ namespace Covid19Tracker
 {
     class WebAPI
     {
-        public static Task<HttpResponseMessage> GetCall()
+        public static Task<HttpResponseMessage> GetCall(string url)
         {
             try
             {
                 ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-                var baseAdress = "https://covid19.mathdro.id/api";
-                string apiUrl = baseAdress;
+                var baseAdress = "https://covid19.mathdro.id/api/";
+                string apiUrl = baseAdress+url;
                 using (HttpClient client = new HttpClient())
                 {
                     client.BaseAddress = new Uri(baseAdress);

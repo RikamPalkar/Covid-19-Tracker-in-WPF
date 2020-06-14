@@ -147,8 +147,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="API Classes\Countries.cs" />
     <Compile Include="DTOClasses\ChartData.cs" />
-    <Compile Include="StatusDetails.cs" />
+    <Compile Include="API Classes\StatusDetails.cs" />
     <Compile Include="WebAPI.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
